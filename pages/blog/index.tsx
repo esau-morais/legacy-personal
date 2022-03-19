@@ -13,8 +13,11 @@ export default function Blog({ posts }) {
             <AnnotationIcon className="w-6 text-gray-600/90" />
           </div>
 
-          <div>
+          <div className='flex items-center justify-between flex-1'>
             <h1 className="text-2xl text-gray-500/90">Posts</h1>
+            <p className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-purple-700 rounded">
+              {posts.length}
+            </p>
           </div>
         </div>
         <div className="mt-12 space-y-10">

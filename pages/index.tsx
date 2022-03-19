@@ -2,7 +2,13 @@ import Head from 'next/head'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { Layout, Navigation, ProfileImage, Posts, ContentLink } from '@/layouts/index'
+import {
+  Layout,
+  Navigation,
+  ProfileImage,
+  Posts,
+  ContentLink,
+} from '@/layouts/index'
 import Link from 'next/link'
 import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
 import ViewGridIcon from '@heroicons/react/solid/ViewGridIcon'
@@ -89,8 +95,8 @@ export default function Home({
 
             <div className="mt-12 space-y-10">
               {repos.map((repo) => (
-                <div className="mt-12 space-y-10">
-                  <ContentLink key={repo.id} href={`${repo.html_url}`}>
+                <div className="mt-12 space-y-10" key={repo.id}>
+                  <ContentLink href={`${repo.html_url}`}>
                     <ContentLink.Title>{repo.description}</ContentLink.Title>
                   </ContentLink>
                 </div>
