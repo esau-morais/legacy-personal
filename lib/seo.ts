@@ -15,7 +15,7 @@ export const seo: DefaultSeoProps = {
     site_name: title,
     images: [
       {
-        url: '/og_image.jpg',
+        url: '/og_image.png',
         width: 1600,
         height: 836,
         alt: title,
