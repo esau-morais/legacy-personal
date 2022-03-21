@@ -1,8 +1,8 @@
+import { Layout, Posts } from '@/layouts/index'
+import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
-import { Layout, Posts } from '@/layouts/index'
 
 export default function Blog({ posts }) {
   return (

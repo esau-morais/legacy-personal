@@ -8,19 +8,14 @@ cover_image: 'https://assets.website-files.com/5e0f1144930a8bc8aace526c/5f899abd
 
 Whenever I see someone effectively debug JavaScript in the browser, they use the browser’s DevTool. Setting breakpoints and hopping over them. That, as opposed to sprinkling `console.log()` statements all around your code.
 
-<br />
 
 In this article, I will explain four reasons why you should stop using `console.log()` and the best tips to make it different, professional, and better.
 
-<br />
 
 ![What if I told you... Your browser has everything you need to debug JavaScript](https://assets.website-files.com/5e0f1144930a8bc8aace526c/5f899c0f9cce810caf471f41_0%25252Aj2xSdGh-CoSe0mck.jpeg)
 
-<br />
 
 # 1. Missing contextual information
-
-<br />
 
 `console.log()` forces you to select which information to log before the debugging consciously. And what you display in the first place is not sufficient or even completely irrelevant sometimes. You usually don’t yet have any idea of what’s going on. Every time you launch your app, you go a step further, realizing you are still not logging the right information at the right time, wasting hours changing your statements, again and again, to display new information and hide irrelevant ones.
 
@@ -28,55 +23,45 @@ In this article, I will explain four reasons why you should stop using `console.
 
 ### Debugging Tip:
 
--Display/watch any JS variable inline while debugging (function arguments, local variables, global variables, etc.).
--Explore the call stack to get the complete context in which your problem appears.
+- Display/watch any JS variable inline while debugging (function arguments, local variables, global variables, etc.).
+- Explore the call stack to get the complete context in which your problem appears.
 
-<br />
 
 # 2. Too much information
 
-<br />
 
 Algorithms are usually designed to automate many small tasks, loops, and recursion being fundamental building blocks for this. Along with `console.log()`, it results in many lines displayed in front of you, i.e., a hard time coming to find the right information.
 
-<br />
 
 ### Debugging Tip:
 
--Create conditional breakpoints to pause the execution at the right time so that you can analyze what’s going on.
--Watch custom JS expressions (variables, conditions, etc.) so that you don’t waste time to derive the same expression at each step of a loop.
--Create a debug login addition to your standard application log to activate debug messages on-demand for the “domain” of interest (e.g., file, service, class, etc.).
+- Create conditional breakpoints to pause the execution at the right time so that you can analyze what’s going on.
+- Watch custom JS expressions (variables, conditions, etc.) so that you don’t waste time to derive the same expression at each step of a loop.
+- Create a debug login addition to your standard application log to activate debug messages on-demand for the “domain” of interest (e.g., file, service, class, etc.).
 
-<br />
 
 # 3. Untrustworthy information
 
-<br />
 
 Most of the time calling `console.log()` when the console is not yet active only results in the object being queued, not the output the console will contain. As a workaround, you will need to either clone the information or serialize snapshots of it. The rendering happens asynchronously (being throttled to rate-limit updates), as future interactions with the logged objects like expanding object properties in the browser console.
 
-<br />
 
 ### Debugging Tip:
 
--Asynchronous stack trace (now the default in Chrome) allows you to inspect function calls beyond the current event loop, just like context-aware travel in time to the originators of your asynchronous callbacks.
+- Asynchronous stack trace (now the default in Chrome) allows you to inspect function calls beyond the current event loop, just like context-aware travel in time to the originators of your asynchronous callbacks.
 
-<br />
 
 # 4. Altered code behavior
 
 The “standard” way to debug asynchronous code is to console log “1”, “2”, “3”, “4”, etc. i.e., all executed steps before the output you’re expecting until you get the right order. Consequently, you modify the code and, thus, the way it runs, leading to tracking unsteady behaviors really hard. After you finish debugging, you also have to remember to delete all the stray console logs in your code.
 
-<br />
 
 ### Debugging Tip:
 
--Part of debugging is not just inspecting code. It’s a process, inspect, change, and then continue debugging. If I spend a bunch of time setting up [breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/), will they still be there after I’ve changed my code and refreshed? Answer: [DevTools](https://developer.chrome.com/docs/devtools/javascript/reference/#stepping/?source=dailydev) appears to do a pretty good job with that.
+- Part of debugging is not just inspecting code. It’s a process, inspect, change, and then continue debugging. If I spend a bunch of time setting up [breakpoints](https://developer.chrome.com/docs/devtools/javascript/breakpoints/), will they still be there after I’ve changed my code and refreshed? Answer: [DevTools](https://developer.chrome.com/docs/devtools/javascript/reference/#stepping/?source=dailydev) appears to do a pretty good job with that.
 
-<br />
 
 To finish this article, I can mention [winston](https://github.com/winstonjs/winston/?source=dailydev) or [loglevel](https://github.com/pimterry/loglevel/?source=dailydev) as fairly good customizable loggers, but I prefer to use them for production-grade logs (information, warnings, errors, etc.).
 
-<br />
 
 If you believe you cannot use the debugger when running your tests, consider reading [this article](https://peterlyons.com/js-debug/?source=dailydev) and other similar resources you might easily find on the internet.

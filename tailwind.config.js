@@ -92,6 +92,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     // https://gist.github.com/samselikoff/b3c5126ee4f4e69e60b0af0aa5bfb2e7
     plugin(function ({ addVariant, e, postcss }) {
       addVariant('firefox', ({ container, separator }) => {

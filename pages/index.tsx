@@ -1,21 +1,17 @@
-import Head from 'next/head'
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
 import {
-  Layout,
-  Navigation,
-  ProfileImage,
-  Posts,
-  ContentLink,
+  ContentLink, Layout,
+  Navigation, Posts, ProfileImage
 } from '@/layouts/index'
-import Link from 'next/link'
 import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
 import ViewGridIcon from '@heroicons/react/solid/ViewGridIcon'
+import fs from 'fs'
+import matter from 'gray-matter'
 import type { InferGetStaticPropsType } from 'next'
+import Head from 'next/head'
+import Link from 'next/link'
+import path from 'path'
 import React, { useEffect, useState } from 'react'
 import { useIntersection } from 'react-use'
-import Projects from './projects'
 
 export default function Home({
   posts,
