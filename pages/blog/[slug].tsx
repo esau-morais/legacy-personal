@@ -34,7 +34,7 @@ export default function SinglePost({
           </h1>
           <p className="mt-5 text-lg text-rose-100/70">{excerpt}</p>
           <div
-            className="mt-10 text-lg text-rose-100/70 prose prose-headings:text-rose-100/80 prose-code:rounded-md prose-code:bg-gray-700/60 prose-code:font-mono prose-code:text-sm prose-code:text-gray-300/90 prose-code:px-2 prose-code:py-0.5 prose-a:underline prose-a:text-rose-100/90 prose-a:decoration-rose-300/30 prose-a:underline-offset-2 prose-a:transition-all"
+            className="mt-10 text-lg text-rose-100/70 prose prose-headings:text-rose-100/80 prose-code:rounded-md prose-code:bg-gray-700/60 prose-code:font-mono prose-code:text-sm prose-code:text-gray-300/90 prose-code:px-2 prose-code:py-0.5 prose-a:underline prose-a:text-rose-100/90 prose-a:decoration-rose-300/30 prose-a:underline-offset-2 prose-a:transition-all prose-strong:text-rose-100/70 prose-strong:font-semibold prose-blockquote:border-l-2 prose-blockquote:border-l-rose-100/70 prose-blockquote:text-rose-100/70"
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           />
         </div>

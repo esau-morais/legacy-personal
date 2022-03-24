@@ -46,24 +46,8 @@ function Text({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Meta({ items }: { items: string[] }) {
-  return (
-    <div className="text-gray-500/90">
-      {items.map((x, i) => {
-        return (
-          <React.Fragment key={i}>
-            {x}
-            {i + 1 < items.length ? (
-              <>
-                {' '}
-                <span className="text-gray-500/30">&middot;</span>{' '}
-              </>
-            ) : null}
-          </React.Fragment>
-        )
-      })}
-    </div>
-  )
+function Meta({ children }: { children: React.ReactNode }) {
+  return <div className="text-gray-500/90">{children}</div>
 }
 
 ContentLink.Title = Title

@@ -7,7 +7,7 @@ export default function Posts({ post }) {
     <div ref={intersectionRef}>
       <ContentLink key={post.slug} href={`/blog/${post.slug}`}>
         <ContentLink.Title>{post.frontmatter.title}</ContentLink.Title>
-
+        <ContentLink.Meta>{post.frontmatter.date}</ContentLink.Meta>
         <ContentLink.Text>{post.frontmatter.excerpt}</ContentLink.Text>
       </ContentLink>
     </div>

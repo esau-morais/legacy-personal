@@ -6,6 +6,7 @@ const nextConfig = {
       'images.unsplash.com',
       'media-exp1.licdn.com',
       'assets.website-files.com',
+      'res.cloudinary.com',
     ],
   },
 }
