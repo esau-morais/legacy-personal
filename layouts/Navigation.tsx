@@ -40,7 +40,7 @@ export default function Navigation() {
 
       <a
         className={cx('group rounded-lg', FOCUS_VISIBLE_OUTLINE)}
-        href="https://twitter.com/lil0serboy"
+        href="https://twitter.com/_3morais"
       >
         <div className="sm:flex sm:items-center sm:space-x-2">
           <div className="mb-1.5 flex justify-center sm:mb-0 sm:block">
