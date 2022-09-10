@@ -1,10 +1,13 @@
 import { FOCUS_VISIBLE_OUTLINE, LINK_SUBTLE_STYLES } from '@/lib/constants'
 import cx from 'clsx'
 import Link from 'next/link'
+import CurrentPlaying from './CurrentPlaying'
 
 export const Footer = () => {
   return (
     <div className="mt-36 pb-36">
+      <CurrentPlaying />
+
       <div className="text-gray-500">
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="flex space-x-4">
