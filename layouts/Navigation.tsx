@@ -3,7 +3,6 @@ import TwitterIcon from '@/layouts/TwitterIcon'
 import {ChatBubbleBottomCenterTextIcon, Squares2X2Icon} from '@heroicons/react/24/solid'
 import cx from 'clsx'
 import Link from 'next/link'
-import React from 'react'
 
 export default function Navigation() {
   return (

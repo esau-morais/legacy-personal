@@ -1,9 +1,9 @@
-import React from 'react'
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import cx from 'clsx'
 import { GradientBackground, ProfileImage, Navigation, Footer } from '.'
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
+import { Fragment } from 'react'
 
 export default function Layout({
   children,
@@ -19,7 +19,7 @@ export default function Layout({
       </div>
 
       <Transition
-        as={React.Fragment}
+        as={Fragment}
         show={showNav}
         enter="transition duration-100 ease-in-out"
         enterFrom="opacity-0 scale-90"

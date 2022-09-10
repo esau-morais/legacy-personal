@@ -1,7 +1,7 @@
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 import cx from 'clsx'
 import Link from 'next/link'
-import React, { ElementType } from 'react'
+import { ElementType } from 'react'
 
 export function ContentLink({
   href,

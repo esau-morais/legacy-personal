@@ -3,6 +3,7 @@ import {
   Navigation, Posts, ProfileImage
 } from '@/layouts/index'
 import fetcher from '@/lib/fetcher'
+import { IRepositories } from '@/lib/interfaces'
 import {ChatBubbleBottomCenterTextIcon, Squares2X2Icon} from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -10,24 +11,14 @@ import type { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
-import React, { useEffect, useState } from 'react'
+import { useRef } from 'react'
 import { useIntersection } from 'react-use'
 import useSWR from 'swr'
-
-interface IRepo {
-  id: number | string;
-  name: string;
-  description: string;
-  html_url: string;
-}
-interface IRepositories {
-  repos: IRepo[]
-}
 
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const intersectionRef = React.useRef(null)
+  const intersectionRef = useRef(null)
   const intersection = useIntersection(intersectionRef, {
     root: null,
   })

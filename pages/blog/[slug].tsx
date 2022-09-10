@@ -6,7 +6,6 @@ import { marked } from 'marked'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import path from 'path'
-import React from 'react'
 
 export default function SinglePost({
   frontmatter: { title, excerpt, author, date, cover_image },

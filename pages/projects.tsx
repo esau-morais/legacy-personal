@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react'
 import { ContentLink, Layout } from '@/layouts/index'
 import {Squares2X2Icon} from '@heroicons/react/24/solid'
+import useSWR from 'swr'
+import { IRepositories } from '@/lib/interfaces'
+import fetcher from '@/lib/fetcher'
 
 export default function Projects() {
-  const [repos, setRepos] = useState<Array<any>>([])
+  const {data} = useSWR<IRepositories>('/api/my-repos', fetcher)
 
-  useEffect(() => {
-    getRepos()
-  }, [])
-
-  const getRepos = () => {
-    fetch('https://api.github.com/users/esau-morais/repos').then(
-      async (res) => {
-        const data = await res.json()
-        setRepos(data)
-      }
-    )
-  }
   return (
     <Layout>
       <div>
@@ -28,11 +18,11 @@ export default function Projects() {
           <div className="flex items-center justify-between flex-1">
             <h1 className="text-2xl text-gray-500/90">Projects</h1>
             <p className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-purple-700 rounded">
-              {repos.length}
+              {data?.repos?.length}
             </p>
           </div>
         </div>
-        {repos.map((repo) => (
+        {data?.repos?.map((repo) => (
           <div className="mt-12 space-y-10" key={repo.id}>
             <ContentLink href={`${repo.html_url}`}>
               <ContentLink.Title>{repo.description}</ContentLink.Title>

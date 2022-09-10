@@ -1,7 +1,9 @@
 import { FOCUS_VISIBLE_OUTLINE, LINK_SUBTLE_STYLES } from '@/lib/constants'
 import cx from 'clsx'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import CurrentPlaying from './CurrentPlaying'
+
+const CurrentPlaying = dynamic(() => import('./CurrentPlaying'))
 
 export const Footer = () => {
   return (
