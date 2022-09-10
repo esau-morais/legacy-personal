@@ -2,7 +2,6 @@ import fetcher from '@/lib/fetcher'
 import { useEffect } from 'react'
 import useSWR from 'swr'
 import { animate } from 'motion'
-import { getCurrentPlaying } from '@/lib/spotify'
 
 interface ICurrentPlaying {
   album: string
@@ -33,7 +32,7 @@ const CurrentPlaying = () => {
         {data?.isPlaying ? (
           <>
             <a
-              className="capsize text-gray-500 dark:text-gray-300 font-medium  max-w-max truncate"
+              className="capsize text-gray-500 dark:text-gray-300 font-bold  max-w-max truncate"
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
