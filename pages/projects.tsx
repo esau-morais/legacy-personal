@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ContentLink, Layout } from '@/layouts/index'
-import ViewGridIcon from '@heroicons/react/solid/ViewGridIcon'
+import {Squares2X2Icon} from '@heroicons/react/24/solid'
 
 export default function Projects() {
   const [repos, setRepos] = useState<Array<any>>([])
@@ -22,7 +22,7 @@ export default function Projects() {
       <div>
         <div className="flex items-center space-x-4">
           <div className="p-2 bg-gray-900 rounded-2xl shadow-surface-elevation-low">
-            <ViewGridIcon className="w-6 text-gray-600/90" />
+            <Squares2X2Icon className="w-6 text-gray-600/90" />
           </div>
 
           <div className="flex items-center justify-between flex-1">

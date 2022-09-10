@@ -2,8 +2,8 @@ import {
   ContentLink, Layout,
   Navigation, Posts, ProfileImage
 } from '@/layouts/index'
-import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
-import ViewGridIcon from '@heroicons/react/solid/ViewGridIcon'
+import fetcher from '@/lib/fetcher'
+import {ChatBubbleBottomCenterTextIcon, Squares2X2Icon} from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
 import type { InferGetStaticPropsType } from 'next'
@@ -12,6 +12,17 @@ import Link from 'next/link'
 import path from 'path'
 import React, { useEffect, useState } from 'react'
 import { useIntersection } from 'react-use'
+import useSWR from 'swr'
+
+interface IRepo {
+  id: number | string;
+  name: string;
+  description: string;
+  html_url: string;
+}
+interface IRepositories {
+  repos: IRepo[]
+}
 
 export default function Home({
   posts,
@@ -26,20 +37,8 @@ export default function Home({
     showNav = true
   }
 
-  const [repos, setRepos] = useState<Array<any>>([])
-
-  useEffect(() => {
-    getRepos()
-  }, [])
-
-  const getRepos = () => {
-    fetch('https://api.github.com/users/esau-morais/repos').then(
-      async (res) => {
-        const data = await res.json()
-        setRepos(data)
-      }
-    )
-  }
+  const {data} = useSWR<IRepositories>('/api/my-repos', fetcher)
+  
   return (
     <div>
       <Head>
@@ -78,7 +77,7 @@ export default function Home({
             <Link href="/projects">
               <a className="flex items-center space-x-4 group">
                 <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
-                  <ViewGridIcon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
+                  <Squares2X2Icon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
                 </div>
 
                 <div>
@@ -90,10 +89,11 @@ export default function Home({
             </Link>
 
             <div className="mt-12 space-y-10">
-              {repos.map((repo) => (
+              {data?.repos?.map((repo) => (
                 <div className="mt-12 space-y-10" key={repo.id}>
                   <ContentLink href={`${repo.html_url}`}>
-                    <ContentLink.Title>{repo.description}</ContentLink.Title>
+                    <ContentLink.Title>{repo.name}</ContentLink.Title>
+                    <ContentLink.Text>{repo.description}</ContentLink.Text>
                   </ContentLink>
                 </div>
               ))}
@@ -104,7 +104,7 @@ export default function Home({
             <Link href="/blog">
               <a className="flex items-center space-x-4 group">
                 <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
-                  <AnnotationIcon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
+                  <ChatBubbleBottomCenterTextIcon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
                 </div>
 
                 <div>

@@ -1,5 +1,5 @@
 import { Layout, Posts } from '@/layouts/index'
-import AnnotationIcon from '@heroicons/react/solid/AnnotationIcon'
+import {Squares2X2Icon} from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
@@ -10,7 +10,7 @@ export default function Blog({ posts }) {
       <div>
         <div className="flex items-center space-x-4">
           <div className="p-2 bg-gray-900 rounded-2xl shadow-surface-elevation-low">
-            <AnnotationIcon className="w-6 text-gray-600/90" />
+            <Squares2X2Icon className="w-6 text-gray-600/90" />
           </div>
 
           <div className='flex items-center justify-between flex-1'>

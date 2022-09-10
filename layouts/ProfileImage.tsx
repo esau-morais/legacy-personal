@@ -1,6 +1,6 @@
 import cx from 'clsx'
 import Image from 'next/image'
-import ProfilePicture from '@/public/myself.jpeg'
+import ProfilePicture from '@/public/myself.webp'
 
 export default function ProfileImage({
   size = 'large',
@@ -31,7 +31,7 @@ export default function ProfileImage({
           src={ProfilePicture}
           alt="A picture of Esau Morais"
           priority={true}
-          className="rounded-full"
+          className="rounded-full object-cover"
           width={size === 'small' ? 36 : 64}
           height={size === 'small' ? 36 : 64}
         />
