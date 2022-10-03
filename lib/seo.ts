@@ -3,7 +3,7 @@ import type { DefaultSeoProps } from 'next-seo'
 const title = `Esau Morais`
 const description = `Welcome to my (simple and aesthetic) world! Here I'll be sharing more about me and mainly my projects. Hope you enjoy 😊`
 const domain = `emorais.vercel.app`
-const twitter = `@lil0serboy`
+const twitter = `@_3morais`
 
 export const seo: DefaultSeoProps = {
   title,

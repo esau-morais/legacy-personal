@@ -43,7 +43,7 @@ export const Footer = () => {
               GitHub
             </a>
             <a
-              href="https://twitter.com/lil0serboy"
+              href="https://twitter.com/_3morais"
               className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
             >
               Twitter
