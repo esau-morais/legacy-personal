@@ -1,7 +1,10 @@
 import { getCurrentPlaying } from 'lib/spotify';
 
+// This uses Regional Edge Functions
+// 🔍 Learn more at https://shrty.vercel.app/axpoto
 export const config = {
-  runtime: 'experimental-edge'
+  runtime: 'experimental-edge', // this is a pre-requisite
+  regions: 'gru1', // only execute this function on gru1
 };
 
 export default async function handler() {
