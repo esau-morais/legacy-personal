@@ -3,9 +3,9 @@ import cx from 'clsx'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
-const CurrentPlaying = dynamic(() => import('./CurrentPlaying'))
+const CurrentPlaying = dynamic(() => import('../molecules/CurrentPlaying'))
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <div className="mt-36 pb-36">
       <CurrentPlaying />
@@ -95,3 +95,5 @@ export const Footer = () => {
     </div>
   )
 }
+
+export default Footer

@@ -2,13 +2,13 @@ import cx from 'clsx'
 import Image from 'next/image'
 import ProfilePicture from '@/public/myself.jpg'
 
-export default function ProfileImage({
+const ProfileImage = ({
   size = 'large',
   isInteractive,
 }: {
   size: 'small' | 'large'
   isInteractive?: boolean
-}) {
+}) => {
   return (
     <div
       className={cx(
@@ -39,3 +39,5 @@ export default function ProfileImage({
     </div>
   )
 }
+
+export default ProfileImage

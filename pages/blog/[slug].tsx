@@ -1,4 +1,4 @@
-import { Layout } from '@/layouts/index'
+import { Layout } from 'components/index'
 import { WPM } from '@/lib/constants'
 import fs from 'fs'
 import matter from 'gray-matter'

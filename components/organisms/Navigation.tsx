@@ -1,13 +1,13 @@
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
-import TwitterIcon from '@/layouts/TwitterIcon'
 import {
   ChatBubbleBottomCenterTextIcon,
   Squares2X2Icon,
 } from '@heroicons/react/24/solid'
 import cx from 'clsx'
 import Link from 'next/link'
+import TwitterIcon from '../atoms/TwitterIcon'
 
-export default function Navigation() {
+const Navigation = () => {
   return (
     <div className="flex items-center leading-none space-x-7 text-rose-100/90 sm:text-lg">
       <Link href="/projects">
@@ -66,3 +66,5 @@ export default function Navigation() {
     </div>
   )
 }
+
+export default Navigation

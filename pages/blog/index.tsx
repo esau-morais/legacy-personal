@@ -1,4 +1,4 @@
-import { Layout, Posts } from '@/layouts/index'
+import { Layout, Posts } from 'components/index'
 import {Squares2X2Icon} from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
