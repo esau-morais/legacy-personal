@@ -9,7 +9,7 @@ const highlightColor2 = hexToRgb(colors.rose['200']).join(',')
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
-    './layouts/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
     './lib/**/*.{js,ts}',
   ],
   darkMode: 'class',

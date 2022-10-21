@@ -1,8 +1,7 @@
 import { useEnabledOnFirstIntersection } from '@/lib/useEnabledOnFirstIntersection'
-import { ContentLink } from './ContentLink'
+import ContentLink from '../atoms/ContentLink'
 
-
-export default function Posts({ post }) {
+const Posts = ({ post }) => {
   const { intersectionRef } = useEnabledOnFirstIntersection()
 
   return (
@@ -15,3 +14,4 @@ export default function Posts({ post }) {
     </div>
   )
 }
+export default Posts

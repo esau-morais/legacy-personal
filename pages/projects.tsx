@@ -1,4 +1,4 @@
-import { ContentLink, Layout } from '@/layouts/index'
+import { ContentLink, Layout } from 'components/index'
 import { Squares2X2Icon } from '@heroicons/react/24/solid'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'

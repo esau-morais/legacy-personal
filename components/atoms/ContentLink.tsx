@@ -8,7 +8,7 @@ type TContentLinkParams = {
   children: ReactNode
 }
 
-export const ContentLink = ({ href, children }: TContentLinkParams) => {
+const ContentLink = ({ href, children }: TContentLinkParams) => {
   return (
     <Link href={href}>
       <a
@@ -53,3 +53,5 @@ ContentLink.Title = Title
 ContentLink.Icon = Icon
 ContentLink.Text = Text
 ContentLink.Meta = Meta
+
+export default ContentLink

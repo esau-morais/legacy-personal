@@ -4,7 +4,7 @@ import {
   Navigation,
   Posts,
   ProfileImage,
-} from '@/layouts/index'
+} from 'components/index'
 import fetcher from '@/lib/fetcher'
 import { IProject } from '@/lib/data'
 import {

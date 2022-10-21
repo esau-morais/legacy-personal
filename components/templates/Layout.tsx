@@ -1,17 +1,17 @@
 import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import cx from 'clsx'
-import { GradientBackground, ProfileImage, Navigation, Footer } from '.'
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 import { Fragment } from 'react'
+import { Footer, GradientBackground, Navigation, ProfileImage } from '..'
 
-export default function Layout({
+const Layout = ({
   children,
   showNav = true,
 }: {
   children: React.ReactNode
   showNav?: boolean
-}) {
+}) => {
   return (
     <div className="min-h-screen bg-[#0e0c0b] antialiased selection:bg-purple-600/90 selection:text-white">
       <div className="relative z-10 w-full mx-auto sm:max-w-screen-sm">
@@ -55,3 +55,5 @@ export default function Layout({
     </div>
   )
 }
+
+export default Layout
