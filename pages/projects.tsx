@@ -1,11 +1,11 @@
 import { ContentLink, Layout } from '@/layouts/index'
-import {Squares2X2Icon} from '@heroicons/react/24/solid'
+import { Squares2X2Icon } from '@heroicons/react/24/solid'
 import useSWR from 'swr'
-import { IRepositories } from '@/lib/interfaces'
 import fetcher from '@/lib/fetcher'
+import { IProject } from '@/lib/data'
 
 export default function Projects() {
-  const {data} = useSWR<IRepositories>('/api/my-repos', fetcher)
+  const { data: projects } = useSWR<IProject[]>('/api/projects', fetcher)
 
   return (
     <Layout>
@@ -18,14 +18,15 @@ export default function Projects() {
           <div className="flex items-center justify-between flex-1">
             <h1 className="text-2xl text-gray-500/90">Projects</h1>
             <p className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-purple-700 rounded">
-              {data?.repos?.length}
+              {projects?.length}
             </p>
           </div>
         </div>
-        {data?.repos?.map((repo) => (
-          <div className="mt-12 space-y-10" key={repo.id}>
-            <ContentLink href={`${repo.html_url}`}>
-              <ContentLink.Title>{repo.description}</ContentLink.Title>
+        {projects?.map((project) => (
+          <div className="mt-12 space-y-10" key={project.id}>
+            <ContentLink href={`${project.repo_url}`}>
+              <ContentLink.Title>{project.name}</ContentLink.Title>
+              <ContentLink.Text>{project.description}</ContentLink.Text>
             </ContentLink>
           </div>
         ))}

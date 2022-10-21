@@ -1,15 +1,14 @@
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 import cx from 'clsx'
 import Link from 'next/link'
-import { ElementType } from 'react'
+import { ElementType, ReactNode } from 'react'
 
-export function ContentLink({
-  href,
-  children,
-}: {
+type TContentLinkParams = {
   href: string
-  children: React.ReactNode
-}) {
+  children: ReactNode
+}
+
+export const ContentLink = ({ href, children }: TContentLinkParams) => {
   return (
     <Link href={href}>
       <a
@@ -24,7 +23,7 @@ export function ContentLink({
   )
 }
 
-function Title({ children }: { children: React.ReactNode }) {
+export const Title = ({ children }: { children: React.ReactNode }) => {
   return (
     <h3 className="text-xl transition duration-300 text-rose-100/80 line-clamp-2 hover:text-rose-100/90">
       {children}
@@ -32,7 +31,7 @@ function Title({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Icon(props: { icon: ElementType }) {
+export const Icon = (props: { icon: ElementType }) => {
   return (
     <div className="mt-1 ml-2 shrink-0">
       <props.icon className="w-5 transition-colors text-rose-100/30 hover:text-rose-100/50" />
@@ -40,13 +39,13 @@ function Icon(props: { icon: ElementType }) {
   )
 }
 
-function Text({ children }: { children: React.ReactNode }) {
+export const Text = ({ children }: { children: React.ReactNode }) => {
   return (
     <p className="mt-4 text-lg text-gray-400/90 line-clamp-3">{children}</p>
   )
 }
 
-function Meta({ children }: { children: React.ReactNode }) {
+export const Meta = ({ children }: { children: React.ReactNode }) => {
   return <div className="text-gray-500/90">{children}</div>
 }
 
