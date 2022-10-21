@@ -1,10 +1,16 @@
 import {
-  ContentLink, Layout,
-  Navigation, Posts, ProfileImage
+  ContentLink,
+  Layout,
+  Navigation,
+  Posts,
+  ProfileImage,
 } from '@/layouts/index'
 import fetcher from '@/lib/fetcher'
-import { IRepositories } from '@/lib/interfaces'
-import {ChatBubbleBottomCenterTextIcon, Squares2X2Icon} from '@heroicons/react/24/solid'
+import { IProject } from '@/lib/data'
+import {
+  ChatBubbleBottomCenterTextIcon,
+  Squares2X2Icon,
+} from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
 import type { InferGetStaticPropsType } from 'next'
@@ -28,8 +34,8 @@ export default function Home({
     showNav = true
   }
 
-  const {data} = useSWR<IRepositories>('/api/my-repos', fetcher)
-  
+  const { data: projects } = useSWR<IProject[]>('/api/projects', fetcher)
+
   return (
     <div>
       <Head>
@@ -80,11 +86,11 @@ export default function Home({
             </Link>
 
             <div className="mt-12 space-y-10">
-              {data?.repos?.map((repo) => (
-                <div className="mt-12 space-y-10" key={repo.id}>
-                  <ContentLink href={`${repo.html_url}`}>
-                    <ContentLink.Title>{repo.name}</ContentLink.Title>
-                    <ContentLink.Text>{repo.description}</ContentLink.Text>
+              {projects?.map((project) => (
+                <div className="mt-12 space-y-10" key={project.id}>
+                  <ContentLink href={String(project.repo_url)}>
+                    <ContentLink.Title>{project.name}</ContentLink.Title>
+                    <ContentLink.Text>{project.description}</ContentLink.Text>
                   </ContentLink>
                 </div>
               ))}
