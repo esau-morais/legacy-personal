@@ -1,10 +1,4 @@
-import {
-  ContentLink,
-  Layout,
-  Navigation,
-  Posts,
-  ProfileImage,
-} from 'components/index'
+import { Layout, Navigation, Post, ProfileImage } from '@/components/index'
 import fetcher from '@/lib/fetcher'
 import { IProject } from '@/lib/data'
 import {
@@ -13,13 +7,16 @@ import {
 } from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
-import type { InferGetStaticPropsType } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
 import { useRef } from 'react'
 import { useIntersection } from 'react-use'
 import useSWR from 'swr'
+import Project from '@/components/molecules/Project'
+import cx from 'clsx'
+import { LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 
 export default function Home({
   posts,
@@ -56,7 +53,15 @@ export default function Home({
                     Esau Morais
                   </h1>
                   <h2 className="text-lg text-rose-100/60">
-                    Front-End Web Developer
+                    Front-End Developer @{' '}
+                    <a
+                      href="https://alive.app.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
+                    >
+                      Alive App
+                    </a>
                   </h2>
                 </div>
               </div>
@@ -87,12 +92,7 @@ export default function Home({
 
             <div className="mt-12 space-y-10">
               {projects?.map((project) => (
-                <div className="mt-12 space-y-10" key={project.id}>
-                  <ContentLink href={String(project.repo_url)}>
-                    <ContentLink.Title>{project.name}</ContentLink.Title>
-                    <ContentLink.Text>{project.description}</ContentLink.Text>
-                  </ContentLink>
-                </div>
+                <Project key={project.id} project={project} />
               ))}
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function Home({
 
             <div className="mt-12 space-y-10">
               {posts.map((post, index) => (
-                <Posts key={index} post={post} />
+                <Post key={index} post={post} />
               ))}
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function Home({
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join('posts'))
 
   const posts = files.map((filename) => {

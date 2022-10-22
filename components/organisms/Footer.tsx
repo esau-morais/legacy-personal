@@ -32,18 +32,24 @@ const Footer = () => {
           <div className="pt-2 space-x-6 font-medium lg:pt-0">
             <a
               href="https://linkedin.com/in/emmorais"
+              target="_blank"
+              rel="noopener noreferrer"
               className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
             >
               LinkedIn
             </a>
             <a
               href="https://github.com/esau-morais"
+              target="_blank"
+              rel="noopener noreferrer"
               className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
             >
               GitHub
             </a>
             <a
               href="https://twitter.com/_3morais"
+              target="_blank"
+              rel="noopener noreferrer"
               className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
             >
               Twitter
@@ -56,6 +62,8 @@ const Footer = () => {
         Built with{' '}
         <a
           href="https://nextjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
         >
           Next.js
@@ -63,6 +71,8 @@ const Footer = () => {
         ,{' '}
         <a
           href="https://github.com/jonschlinkert/gray-matter"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
         >
           Gray-Matter
@@ -70,6 +80,8 @@ const Footer = () => {
         ,{' '}
         <a
           href="https://tailwindcss.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
         >
           Tailwind
@@ -77,6 +89,8 @@ const Footer = () => {
         and{' '}
         <a
           href="https://vercel.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
         >
           Vercel
@@ -87,9 +101,20 @@ const Footer = () => {
         Inspired by{' '}
         <a
           href="https://delba.dev"
+          target="_blank"
+          rel="noopener noreferrer"
           className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
         >
           Delba
+        </a>{' '}
+        and{' '}
+        <a
+          href="https://leerob.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
+        >
+          Lee
         </a>
       </p>
     </div>
