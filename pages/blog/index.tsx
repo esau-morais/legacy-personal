@@ -1,10 +1,12 @@
-import { Layout, Posts } from 'components/index'
-import {Squares2X2Icon} from '@heroicons/react/24/solid'
+import { Layout, Post } from '@/components/index'
+import { IPost } from '@/lib/data'
+import { Squares2X2Icon } from '@heroicons/react/24/solid'
 import fs from 'fs'
 import matter from 'gray-matter'
+import { GetStaticProps } from 'next'
 import path from 'path'
 
-export default function Blog({ posts }) {
+export default function Blog({ posts }: { posts: IPost[] }) {
   return (
     <Layout>
       <div>
@@ -13,7 +15,7 @@ export default function Blog({ posts }) {
             <Squares2X2Icon className="w-6 text-gray-600/90" />
           </div>
 
-          <div className='flex items-center justify-between flex-1'>
+          <div className="flex items-center justify-between flex-1">
             <h1 className="text-2xl text-gray-500/90">Posts</h1>
             <p className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-purple-700 rounded">
               {posts.length}
@@ -22,7 +24,7 @@ export default function Blog({ posts }) {
         </div>
         <div className="mt-12 space-y-10">
           {posts.map((post, index) => (
-            <Posts key={index} post={post} />
+            <Post key={index} post={post} />
           ))}
         </div>
       </div>
@@ -30,7 +32,7 @@ export default function Blog({ posts }) {
   )
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   const files = fs.readdirSync(path.join('posts'))
 
   const posts = files.map((filename) => {

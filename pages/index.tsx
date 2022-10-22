@@ -1,6 +1,6 @@
 import { Layout, Navigation, Post, ProfileImage } from '@/components/index'
 import fetcher from '@/lib/fetcher'
-import { IProject } from '@/lib/data'
+import { IPost, IProject } from '@/lib/data'
 import {
   ChatBubbleBottomCenterTextIcon,
   Squares2X2Icon,
@@ -18,9 +18,7 @@ import Project from '@/components/molecules/Project'
 import cx from 'clsx'
 import { LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 
-export default function Home({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ posts }: { posts: IPost[] }) {
   const intersectionRef = useRef(null)
   const intersection = useIntersection(intersectionRef, {
     root: null,
