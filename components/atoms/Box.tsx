@@ -3,17 +3,17 @@ import cx from 'clsx'
 import Link from 'next/link'
 import { ElementType, ReactNode } from 'react'
 
-type TContentLinkParams = {
+type TBoxParams = {
   href: string
   children: ReactNode
 }
 
-const ContentLink = ({ href, children }: TContentLinkParams) => {
+const Box = ({ href, children }: TBoxParams) => {
   return (
     <Link href={href}>
       <a
         className={cx(
-          'block rounded-2xl bg-white/[2%] p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/[3%] hover:shadow-surface-elevation-medium',
+          'relative block rounded-2xl bg-white/[2%] p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/[3%] hover:shadow-surface-elevation-medium',
           FOCUS_VISIBLE_OUTLINE
         )}
       >
@@ -49,9 +49,9 @@ export const Meta = ({ children }: { children: React.ReactNode }) => {
   return <div className="text-gray-500/90">{children}</div>
 }
 
-ContentLink.Title = Title
-ContentLink.Icon = Icon
-ContentLink.Text = Text
-ContentLink.Meta = Meta
+Box.Title = Title
+Box.Icon = Icon
+Box.Text = Text
+Box.Meta = Meta
 
-export default ContentLink
+export default Box

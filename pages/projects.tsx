@@ -1,8 +1,9 @@
-import { ContentLink, Layout } from 'components/index'
+import { Box, Layout } from 'components/index'
 import { Squares2X2Icon } from '@heroicons/react/24/solid'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import { IProject } from '@/lib/data'
+import Project from '@/components/molecules/Project'
 
 export default function Projects() {
   const { data: projects } = useSWR<IProject[]>('/api/projects', fetcher)
@@ -23,12 +24,7 @@ export default function Projects() {
           </div>
         </div>
         {projects?.map((project) => (
-          <div className="mt-12 space-y-10" key={project.id}>
-            <ContentLink href={`${project.repo_url}`}>
-              <ContentLink.Title>{project.name}</ContentLink.Title>
-              <ContentLink.Text>{project.description}</ContentLink.Text>
-            </ContentLink>
-          </div>
+          <Project key={project.id} project={project} />
         ))}
       </div>
     </Layout>
