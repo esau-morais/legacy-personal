@@ -1,11 +1,11 @@
-import { Box, Layout } from 'components/index'
+import { Layout } from 'components/index'
 import { Squares2X2Icon } from '@heroicons/react/24/solid'
 import useSWR from 'swr'
 import fetcher from '@/lib/fetcher'
 import { IProject } from '@/lib/data'
 import Project from '@/components/molecules/Project'
 
-export default function Projects() {
+const Projects = () => {
   const { data: projects } = useSWR<IProject[]>('/api/projects', fetcher)
 
   return (
@@ -30,3 +30,5 @@ export default function Projects() {
     </Layout>
   )
 }
+
+export default Projects

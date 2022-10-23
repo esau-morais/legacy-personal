@@ -2,18 +2,25 @@ import { Transition } from '@headlessui/react'
 import Link from 'next/link'
 import cx from 'clsx'
 import { FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
-import { Fragment } from 'react'
+import { FC, Fragment, HTMLAttributes, PropsWithChildren } from 'react'
 import { Footer, GradientBackground, Navigation, ProfileImage } from '..'
 
-const Layout = ({
+type TLayoutProps = {
+  showNav?: boolean
+} & HTMLAttributes<HTMLDivElement>
+
+const Layout: FC<PropsWithChildren<TLayoutProps>> = ({
   children,
   showNav = true,
-}: {
-  children: React.ReactNode
-  showNav?: boolean
+  className,
 }) => {
   return (
-    <div className="min-h-screen bg-[#0e0c0b] antialiased selection:bg-purple-600/90 selection:text-white">
+    <div
+      className={cx(
+        'min-h-screen bg-[#0e0c0b] antialiased selection:bg-purple-600/90 selection:text-white',
+        className
+      )}
+    >
       <div className="relative z-10 w-full mx-auto sm:max-w-screen-sm">
         <GradientBackground />
       </div>

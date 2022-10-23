@@ -18,7 +18,7 @@ import Project from '@/components/molecules/Project'
 import cx from 'clsx'
 import { LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 
-export default function Home({ posts }: { posts: IPost[] }) {
+const Home = ({ posts }: { posts: IPost[] }) => {
   const intersectionRef = useRef(null)
   const intersection = useIntersection(intersectionRef, {
     root: null,
@@ -121,6 +121,8 @@ export default function Home({ posts }: { posts: IPost[] }) {
     </div>
   )
 }
+
+export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const files = fs.readdirSync(path.join('posts'))
