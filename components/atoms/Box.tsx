@@ -10,17 +10,17 @@ type TBoxParams = {
 
 const Box = ({ href, children }: TBoxParams) => {
   return (
-    <Link href={href}>
-      <a
-        className={cx(
-          'relative block rounded-2xl bg-white/[2%] p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/[3%] hover:shadow-surface-elevation-medium',
-          FOCUS_VISIBLE_OUTLINE
-        )}
-      >
-        {children}
-      </a>
-    </Link>
-  )
+    (<Link
+      href={href}
+      className={cx(
+        'relative block rounded-2xl bg-white/[2%] p-7 shadow-surface-elevation-low transition duration-300 hover:bg-white/[3%] hover:shadow-surface-elevation-medium',
+        FOCUS_VISIBLE_OUTLINE
+      )}>
+
+      {children}
+
+    </Link>)
+  );
 }
 
 export const Title = ({ children }: { children: React.ReactNode }) => {

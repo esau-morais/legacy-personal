@@ -14,17 +14,19 @@ const Footer = () => {
         <div className="flex flex-col justify-between lg:flex-row">
           <div className="flex space-x-4">
             <div>
-              <Link href="/projects">
-                <a className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}>
+              <Link
+                href="/projects"
+                className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}>
+                
                   Projects
-                </a>
+                
               </Link>
             </div>
             <div>
-              <Link href="/blog">
-                <a className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}>
+              <Link href="/blog" className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}>
+                
                   Posts
-                </a>
+                
               </Link>
             </div>
           </div>
@@ -118,7 +120,7 @@ const Footer = () => {
         </a>
       </p>
     </div>
-  )
+  );
 }
 
 export default Footer

@@ -74,18 +74,17 @@ const Home = ({ posts }: { posts: IPost[] }) => {
           </div>
 
           <div>
-            <Link href="/projects">
-              <a className="flex items-center space-x-4 group">
-                <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
-                  <Squares2X2Icon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
-                </div>
+            <Link href="/projects" className="flex items-center space-x-4 group">
 
-                <div>
-                  <h2 className="text-2xl transition-colors text-rose-100/40 group-hover:text-rose-100/80">
-                    Projects
-                  </h2>
-                </div>
-              </a>
+              <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
+                <Squares2X2Icon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
+              </div>
+              <div>
+                <h2 className="text-2xl transition-colors text-rose-100/40 group-hover:text-rose-100/80">
+                  Projects
+                </h2>
+              </div>
+
             </Link>
 
             <div className="mt-12 space-y-10">
@@ -96,18 +95,17 @@ const Home = ({ posts }: { posts: IPost[] }) => {
           </div>
 
           <div>
-            <Link href="/blog">
-              <a className="flex items-center space-x-4 group">
-                <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
-                  <ChatBubbleBottomCenterTextIcon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
-                </div>
+            <Link href="/blog" className="flex items-center space-x-4 group">
 
-                <div>
-                  <h2 className="text-2xl transition-colors text-rose-100/40 group-hover:text-rose-100/80">
-                    Posts
-                  </h2>
-                </div>
-              </a>
+              <div className="rounded-2xl bg-white/[5%] p-2 shadow-surface-elevation-low transition duration-300 group-hover:bg-white/[7%] group-hover:shadow-surface-elevation-medium">
+                <ChatBubbleBottomCenterTextIcon className="w-6 transition-colors text-rose-100/20 group-hover:text-rose-100/40" />
+              </div>
+              <div>
+                <h2 className="text-2xl transition-colors text-rose-100/40 group-hover:text-rose-100/80">
+                  Posts
+                </h2>
+              </div>
+
             </Link>
 
             <div className="mt-12 space-y-10">
@@ -119,7 +117,7 @@ const Home = ({ posts }: { posts: IPost[] }) => {
         </div>
       </Layout>
     </div>
-  )
+  );
 }
 
 export default Home
