@@ -15,8 +15,6 @@ import { useRef } from 'react'
 import { useIntersection } from 'react-use'
 import useSWR from 'swr'
 import Project from '@/components/molecules/Project'
-import cx from 'clsx'
-import { LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE } from '@/lib/constants'
 
 const Home = ({ posts }: { posts: IPost[] }) => {
   const intersectionRef = useRef(null)
@@ -50,17 +48,7 @@ const Home = ({ posts }: { posts: IPost[] }) => {
                   <h1 className="text-4xl font-medium text-rose-50/80">
                     Esau Morais
                   </h1>
-                  <h2 className="text-lg text-rose-100/60">
-                    Front-End Developer @{' '}
-                    <a
-                      href="https://alive.app.br"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cx(LINK_SUBTLE_STYLES, FOCUS_VISIBLE_OUTLINE)}
-                    >
-                      Alive App
-                    </a>
-                  </h2>
+                  <h2 className="text-lg text-rose-100/60">Full Stack Web Developer</h2>
                 </div>
               </div>
 
